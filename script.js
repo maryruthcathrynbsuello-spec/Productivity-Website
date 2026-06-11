@@ -11,12 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const addTask = (event) => {
         event.preventDefault();
         const taskText = taskInput.value.trim();
-        if(!taskText){
+        if (!taskText) {
             return;
         }
 
         const li = document.createElement('li');
-        li.textContent = taskText;
+        li.innerHTML = `<input type="checkbox" class="task-checkbox"> <span>${taskText}</span>` ;
+
         taskList.appendChild(li);
         taskInput.value = '';
     };
