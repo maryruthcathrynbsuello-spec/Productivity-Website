@@ -37,5 +37,47 @@ body{
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
     border: 3px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(10px);
+}
 
+.app-box h1{
+    font-size: 2rem;
+}
+
+.app-box input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.app-box button{
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font: inherit;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.app-box button:hover{
+    transform: scale(1.1);
+    background: rgb(0, 31, 97);
+    box-shadow: 0 0 10px rgba(225, 225, 4, 0.738);
+}
+
+.app-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#task-list{
+    width: 100%;
 }
