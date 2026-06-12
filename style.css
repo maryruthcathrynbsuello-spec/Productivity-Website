@@ -96,33 +96,63 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-#tasks li .checkbox{
+#tasks li .task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
     min-width: 20px;
     height: 20px;
-    border:2px solid rgbd(255, 255, 255, 0.3);
+    border: 2px solid rgba(59, 6, 151, 0.3);  /* fixed: rgba not rgbd */
     background: transparent;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-#tasks li .checkbox:checked{
-    background: rgb(14, 0, 54);
-    transform: scale (1.1);
-}
+#tasks li .task-checkbox:checked {
+    background: rgba(14, 0, 54);
+    border-color: rgba(14, 0, 54);
+    transform: scale(1.1);                        /* fixed: removed space in scale() */
 
-#tasks li .checkbox:checked::before{
-
-    content: '\2713';
-    color : white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
+    /* fixed: use background-image instead of ::before */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M13.485 1.431a1.473 1.473 0 0 0-2.084 0l-6.272 6.272-2.273-2.273a1.473 1.473 0 0 0-2.084 2.084l3.315 3.315a1.473 1.473 0 0 0 2.084 0l7.314-7.314a1.473 1.473 0 0 0 0-2.084z'/%3E%3C/svg%3E");
+    background-size: 11px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #tasks li span{
     flex: 1;
     margin-left: 10px;
     word-wrap: break-word;
+}
+
+.task-buttons{
+    display: flex;
+    gap: 10px;
+    margin-right: auto;
+}
+
+.task-buttons button{
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    color: #282626;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-buttons .edit-btn:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+.task-buttons .delete-btn:hover {
+    background: #e74c3c;
+    color: #fff;
 }
